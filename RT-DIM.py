@@ -21,12 +21,6 @@ slim = tf.contrib.slim
 
 FLAGS = tf.flags.FLAGS
 
-def del_all_flags(FLAGS):
-    flags_dict = FLAGS._flags()    
-    keys_list = [keys for keys in flags_dict]    
-    for keys in keys_list:
-        FLAGS.__delattr__(keys)
-
 #delete all of flags before running the main command     
 #del_all_flags(tf.flags.FLAGS)
         
@@ -36,13 +30,13 @@ tf.flags.DEFINE_string(
     'master', '', 'The address of the TensorFlow master to use.')
 
 tf.flags.DEFINE_string(
-    'checkpoint_path', 'D:/Anaconda/project/models/inception_v3.ckpt', 'Path to checkpoint for inception network.')
+    'checkpoint_path', '', 'Path to checkpoint for inception network.')
 
 tf.flags.DEFINE_string(
-   'input_dir', 'D:/Anaconda/project/dataset/images', 'Input directory with images.')
+   'input_dir', '', 'Input directory with images.')
 
 tf.flags.DEFINE_string(
-   'output_dir', 'D:/Anaconda/project/Momentum_Non_Targeted/output_test', 'Output directory with images.')
+   'output_dir', '', 'Output directory with images.')
 
 tf.flags.DEFINE_integer(
     'image_width', 299, 'Width of each input images.')
@@ -73,7 +67,6 @@ tf.flags.DEFINE_string(
     'GPU_ID', '0,1', 'which GPU to use.')
 
 # =============================================================================
-# 
 # se = int(time.time())
 # print (se)
 # np.random.seed(se)
@@ -89,9 +82,6 @@ print(FLAGS.__dict__)
 
 os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
 os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.GPU_ID
-
-
-
 def load_images(input_dir, output_dir, batch_shape):
   """Read png images from input directory in batches.
   Args:
@@ -143,7 +133,6 @@ def save_images(images, filenames, output_dir):
     with tf.gfile.Open(os.path.join(output_dir, filename), 'w') as f:
      # imageio.imsave(f, (images[i, :, :, :] + 1.0) * 0.5 * 255, format='png')
       imageio.imsave(f, Image.fromarray(uint8((images[i, :, :, :] + 1.0) * 0.5 * 255)), format='png')
-
 
 
 beta1 = 0.99
