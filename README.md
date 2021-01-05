@@ -16,7 +16,8 @@ we propose a new attack method based on data augmentation that randomly transfor
 ### Dataset
 We use a subset of ImageNet validation set containing 1000 images, most of which are correctly classified by those models.
 
-
+### Models
+We use the ensemble of seven models in our submission, many of which are adversarially trained models. The models can be downloaded in (https://github.com/tensorflow/models/tree/master/research/slim, https://github.com/tensorflow/models/tree/master/research/adv imagenet models).
 
 
 
