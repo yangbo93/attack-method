@@ -11,7 +11,7 @@ This repository contains code to reproduce results from the paper:
 - scipy 1.4.1
 
 ## Method
-we propose a new attack method based on data augmentation that randomly transforms the brightness of the input image at each iteration in the attack process to alleviate overfitting and generate adversarial examples with more transferability. We summarize our algorithm in [Random Transformation of Image Brightness for Adversarial Attack].
+we propose a new attack method based on data augmentation that randomly transforms the brightness of the input image at each iteration in the attack process to alleviate overfitting and generate adversarial examples with more transferability. We summarize our algorithm in [Random Transformation of Image Brightness for Adversarial Attack] https://arxiv.org/abs/2101.04321.
 
 ### Dataset
 We use a subset of ImageNet validation set containing 1000 images, most of which are correctly classified by those models.
