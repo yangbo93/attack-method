@@ -1,6 +1,6 @@
 # RT-DIM
 This repository contains code to reproduce results from the paper:
-**Random Transformation of Image Brightness for Adversarial Attack**
+**Random Transformation of Image Brightness for Adversarial Attack**. This paper has been accepted in JOURNAL OF INTELLIGENT & FUZZYSYSTEMS  with the according link: https://content.iospress.com/articles/journal-of-intelligent-and-fuzzy-systems/ifs211157.
 
 ## REQUIREMENTS
 - Environment Anaconda
